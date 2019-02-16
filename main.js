@@ -41,7 +41,7 @@ module.exports = ".companyName{\r\n    font-size: 150%;\r\n}\r\ndiv {\r\n    /*o
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<!-- <div style=\"text-align:center\">\r\n  <h1>\r\n    Welcome to {{ title }}!\r\n  </h1>\r\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\r\n</div>\r\n<h2>Here are some links to help you start: </h2>\r\n<ul>\r\n  <li>\r\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">Tour of Heroes</a></h2>\r\n  </li>\r\n  <li>\r\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">CLI Documentation</a></h2>\r\n  </li>\r\n  <li>\r\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">Angular blog</a></h2>\r\n  </li>\r\n</ul> -->\r\n\r\n<!--<app-navbar>-->\r\n<!--</app-navbar>-->\r\n\r\n<div style=\"height: 100vh;\">\r\n    <mat-toolbar color=\"primary\" class=\"primary-color-bg\">\r\n        <div fxShow=\"true\" fxHide.gt-sm=\"true\">\r\n            <button mat-icon-button (click)=\"sidenav.toggle()\">\r\n                <mat-icon>menu</mat-icon>\r\n            </button>\r\n        </div>\r\n        <a mat-button class=\"companyName\" routerLink=\"/\">\r\n            <span>{{ title }}</span>\r\n        </a>\r\n        <span class=\"example-spacer\"></span>\r\n        <div fxShow=\"true\" fxHide.lt-md=\"true\">\r\n            <a *ngFor=\"let menu of menus\" mat-button routerLink=\"{{ menu.link }}\">\r\n                {{ menu.menu }}\r\n            </a>\r\n        </div>\r\n    </mat-toolbar>\r\n    <mat-sidenav-container fxFlexFill class=\"example-container\">\r\n        <mat-sidenav color=\"primary\" #sidenav fxLayout=\"column\" mode=\"over\" opened=\"false\" fxHide.gt-sm=\"true\">\r\n            <div fxLayout=\"column\">\r\n                <a *ngFor=\"let menu of menus\" mat-button routerLink=\"{{ menu.link }}\">\r\n                    {{ menu.menu }}\r\n                </a>\r\n            </div>\r\n        </mat-sidenav>\r\n        <mat-sidenav-content fxFlexFill>\r\n\r\n            <!--your content is here-->\r\n            <router-outlet></router-outlet>\r\n            <!--your content is here-->\r\n\r\n            <app-footer></app-footer>\r\n        </mat-sidenav-content>\r\n    </mat-sidenav-container>\r\n</div>\r\n"
+module.exports = "<div style=\"height: 100vh;\">\r\n    <mat-toolbar color=\"primary\" class=\"primary-color-bg\">\r\n        <div fxShow=\"true\" fxHide.gt-sm=\"true\">\r\n            <button mat-icon-button (click)=\"sidenav.toggle()\">\r\n                <mat-icon>menu</mat-icon>\r\n            </button>\r\n        </div>\r\n        <a mat-button class=\"companyName\" routerLink=\"/\" >\r\n            <!--<span>{{ title }}</span>-->\r\n            <img src=\"{{title_image}}\" style=\"width: 10rem;\" alt=\"SIRUS.ID 2.0\"/>\r\n        </a>\r\n        <span class=\"example-spacer\"></span>\r\n        <div fxShow=\"true\" fxHide.lt-md=\"true\">\r\n            <a *ngFor=\"let menu of menus\" mat-button routerLink=\"{{ menu.link }}\">\r\n                {{ menu.menu }}\r\n            </a>\r\n        </div>\r\n    </mat-toolbar>\r\n    <mat-sidenav-container fxFlexFill class=\"example-container\">\r\n        <mat-sidenav color=\"primary\" #sidenav fxLayout=\"column\" mode=\"over\" opened=\"false\" fxHide.gt-sm=\"true\">\r\n            <div fxLayout=\"column\">\r\n                <a *ngFor=\"let menu of menus\" mat-button routerLink=\"{{ menu.link }}\">\r\n                    {{ menu.menu }}\r\n                </a>\r\n            </div>\r\n        </mat-sidenav>\r\n        <mat-sidenav-content fxFlexFill>\r\n\r\n            <!--your content is here-->\r\n            <router-outlet></router-outlet>\r\n            <!--your content is here-->\r\n\r\n            <app-footer></app-footer>\r\n        </mat-sidenav-content>\r\n    </mat-sidenav-container>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -66,6 +66,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.options = {};
         this.title = 'SIRUS.ID 2.0';
+        this.title_image = '/assets/img/logo/siruslogo3.png';
         this.menus = [
             {
                 index: 1,
@@ -80,7 +81,7 @@ var AppComponent = /** @class */ (function () {
             {
                 index: 3,
                 menu: 'Cari Layanan',
-                link: '/layanan'
+                link: '/layanan/cari'
             },
             {
                 index: 4,
@@ -133,30 +134,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./navbar/navbar.component */ "./src/app/navbar/navbar.component.ts");
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _table_table_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./table/table.component */ "./src/app/table/table.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
-/* harmony import */ var _home_navigation_home_navigation_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./home-navigation/home-navigation.component */ "./src/app/home-navigation/home-navigation.component.ts");
-/* harmony import */ var _doctor_schedule_doctor_schedule_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./doctor-schedule/doctor-schedule.component */ "./src/app/doctor-schedule/doctor-schedule.component.ts");
-/* harmony import */ var _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./doctor-schedule/doctor-schedule-resolver */ "./src/app/doctor-schedule/doctor-schedule-resolver.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _doctor_base_doctor_base_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./doctor-base/doctor-base.component */ "./src/app/doctor-base/doctor-base.component.ts");
-/* harmony import */ var _doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./doctor-profile/doctor-profile.component */ "./src/app/doctor-profile/doctor-profile.component.ts");
-/* harmony import */ var _doctor_find_base_doctor_find_base_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./doctor-find-base/doctor-find-base.component */ "./src/app/doctor-find-base/doctor-find-base.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _card_header_card_header_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./card-header/card-header.component */ "./src/app/card-header/card-header.component.ts");
-/* harmony import */ var _menu_icon_menu_icon_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./menu-icon/menu-icon.component */ "./src/app/menu-icon/menu-icon.component.ts");
-/* harmony import */ var _doctor_category_doctor_category_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./doctor-category/doctor-category.component */ "./src/app/doctor-category/doctor-category.component.ts");
-/* harmony import */ var _list_doctor_by_category_list_doctor_by_category_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./list-doctor-by-category/list-doctor-by-category.component */ "./src/app/list-doctor-by-category/list-doctor-by-category.component.ts");
-/* harmony import */ var _doctor_detail_mini_card_doctor_detail_mini_card_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./doctor-detail-mini-card/doctor-detail-mini-card.component */ "./src/app/doctor-detail-mini-card/doctor-detail-mini-card.component.ts");
-
-
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
+/* harmony import */ var _home_navigation_home_navigation_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./home-navigation/home-navigation.component */ "./src/app/home-navigation/home-navigation.component.ts");
+/* harmony import */ var _doctor_schedule_doctor_schedule_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./doctor-schedule/doctor-schedule.component */ "./src/app/doctor-schedule/doctor-schedule.component.ts");
+/* harmony import */ var _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./doctor-schedule/doctor-schedule-resolver */ "./src/app/doctor-schedule/doctor-schedule-resolver.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _doctor_base_doctor_base_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./doctor-base/doctor-base.component */ "./src/app/doctor-base/doctor-base.component.ts");
+/* harmony import */ var _doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./doctor-profile/doctor-profile.component */ "./src/app/doctor-profile/doctor-profile.component.ts");
+/* harmony import */ var _doctor_find_base_doctor_find_base_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./doctor-find-base/doctor-find-base.component */ "./src/app/doctor-find-base/doctor-find-base.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _card_header_card_header_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./card-header/card-header.component */ "./src/app/card-header/card-header.component.ts");
+/* harmony import */ var _menu_icon_menu_icon_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./menu-icon/menu-icon.component */ "./src/app/menu-icon/menu-icon.component.ts");
+/* harmony import */ var _doctor_category_doctor_category_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./doctor-category/doctor-category.component */ "./src/app/doctor-category/doctor-category.component.ts");
+/* harmony import */ var _list_doctor_by_category_list_doctor_by_category_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./list-doctor-by-category/list-doctor-by-category.component */ "./src/app/list-doctor-by-category/list-doctor-by-category.component.ts");
+/* harmony import */ var _doctor_detail_mini_card_doctor_detail_mini_card_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./doctor-detail-mini-card/doctor-detail-mini-card.component */ "./src/app/doctor-detail-mini-card/doctor-detail-mini-card.component.ts");
+/* harmony import */ var _doctor_comments_doctor_comments_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./doctor-comments/doctor-comments.component */ "./src/app/doctor-comments/doctor-comments.component.ts");
+/* harmony import */ var _layanan_layanan_find_base_layanan_find_base_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./layanan/layanan-find-base/layanan-find-base.component */ "./src/app/layanan/layanan-find-base/layanan-find-base.component.ts");
+/* harmony import */ var _layanan_list_layanan_by_category_list_layanan_by_category_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./layanan/list-layanan-by-category/list-layanan-by-category.component */ "./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.ts");
+/* harmony import */ var _layanan_layanan_detail_mini_card_layanan_detail_mini_card_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./layanan/layanan-detail-mini-card/layanan-detail-mini-card.component */ "./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.ts");
+/* harmony import */ var _layanan_layanan_profile_layanan_profile_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./layanan/layanan-profile/layanan-profile.component */ "./src/app/layanan/layanan-profile/layanan-profile.component.ts");
+/* harmony import */ var _layanan_layanan_category_layanan_category_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./layanan/layanan-category/layanan-category.component */ "./src/app/layanan/layanan-category/layanan-category.component.ts");
+/* harmony import */ var _my_profile_antrian_saya_antrian_saya_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./my-profile/antrian-saya/antrian-saya.component */ "./src/app/my-profile/antrian-saya/antrian-saya.component.ts");
+/* harmony import */ var _my_profile_antrian_saya_item_antrian_saya_item_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./my-profile/antrian-saya-item/antrian-saya-item.component */ "./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.ts");
 
 
 
@@ -185,42 +190,84 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
 var appRoutes = [
-    { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"] },
-    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"] },
     {
-        path: 'dokter/jadwal',
-        component: _doctor_schedule_doctor_schedule_component__WEBPACK_IMPORTED_MODULE_16__["DoctorScheduleComponent"],
+        path: 'login',
+        component: _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"]
+    },
+    {
+        path: '',
+        component: _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"]
+    },
+    {
+        path: 'dokter/:idDokter/jadwal',
+        component: _doctor_schedule_doctor_schedule_component__WEBPACK_IMPORTED_MODULE_14__["DoctorScheduleComponent"],
         resolve: {
-            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_17__["DoctorScheduleResolver"]
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
         }
     },
     {
-        path: 'dokter/profil',
-        component: _doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_20__["DoctorProfileComponent"],
+        path: 'dokter/:idDokter/profil',
+        component: _doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_18__["DoctorProfileComponent"],
         resolve: {
-            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_17__["DoctorScheduleResolver"]
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
+        }
+    },
+    {
+        path: 'dokter/:idDokter/komentar',
+        component: _doctor_comments_doctor_comments_component__WEBPACK_IMPORTED_MODULE_26__["DoctorCommentsComponent"],
+        resolve: {
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
         }
     },
     {
         path: 'dokter/cari',
-        component: _doctor_find_base_doctor_find_base_component__WEBPACK_IMPORTED_MODULE_21__["DoctorFindBaseComponent"],
+        component: _doctor_find_base_doctor_find_base_component__WEBPACK_IMPORTED_MODULE_19__["DoctorFindBaseComponent"],
         resolve: {
-            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_17__["DoctorScheduleResolver"]
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
         },
     },
     {
         path: 'dokter/kategori',
-        component: _doctor_category_doctor_category_component__WEBPACK_IMPORTED_MODULE_25__["DoctorCategoryComponent"],
+        component: _doctor_category_doctor_category_component__WEBPACK_IMPORTED_MODULE_23__["DoctorCategoryComponent"],
         resolve: {
-            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_17__["DoctorScheduleResolver"]
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
         },
     },
     {
         path: 'dokter/kategori/dokter-umum',
-        component: _list_doctor_by_category_list_doctor_by_category_component__WEBPACK_IMPORTED_MODULE_26__["ListDoctorByCategoryComponent"],
+        component: _list_doctor_by_category_list_doctor_by_category_component__WEBPACK_IMPORTED_MODULE_24__["ListDoctorByCategoryComponent"],
         resolve: {
-            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_17__["DoctorScheduleResolver"]
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
+        },
+    },
+    {
+        path: 'layanan/cari',
+        component: _layanan_layanan_find_base_layanan_find_base_component__WEBPACK_IMPORTED_MODULE_27__["LayananFindBaseComponent"],
+        resolve: {
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
+        },
+    },
+    {
+        path: 'layanan/kategori',
+        component: _layanan_layanan_category_layanan_category_component__WEBPACK_IMPORTED_MODULE_31__["LayananCategoryComponent"],
+        resolve: {
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
+        },
+    },
+    {
+        path: 'profil-saya/antrian',
+        component: _my_profile_antrian_saya_antrian_saya_component__WEBPACK_IMPORTED_MODULE_32__["AntrianSayaComponent"],
+        resolve: {
+            campaign: _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
         },
     }
 ];
@@ -231,45 +278,51 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__["DashboardComponent"],
-                _table_table_component__WEBPACK_IMPORTED_MODULE_11__["TableComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"],
-                _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_14__["UserDetailComponent"],
-                _home_navigation_home_navigation_component__WEBPACK_IMPORTED_MODULE_15__["HomeNavigationComponent"],
-                _doctor_schedule_doctor_schedule_component__WEBPACK_IMPORTED_MODULE_16__["DoctorScheduleComponent"],
-                _doctor_base_doctor_base_component__WEBPACK_IMPORTED_MODULE_19__["DoctorBaseComponent"],
-                _doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_20__["DoctorProfileComponent"],
-                _doctor_find_base_doctor_find_base_component__WEBPACK_IMPORTED_MODULE_21__["DoctorFindBaseComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_22__["FooterComponent"],
-                _card_header_card_header_component__WEBPACK_IMPORTED_MODULE_23__["CardHeaderComponent"],
-                _menu_icon_menu_icon_component__WEBPACK_IMPORTED_MODULE_24__["MenuIconComponent"],
-                _doctor_category_doctor_category_component__WEBPACK_IMPORTED_MODULE_25__["DoctorCategoryComponent"],
-                _list_doctor_by_category_list_doctor_by_category_component__WEBPACK_IMPORTED_MODULE_26__["ListDoctorByCategoryComponent"],
-                _doctor_detail_mini_card_doctor_detail_mini_card_component__WEBPACK_IMPORTED_MODULE_27__["DoctorDetailMiniCardComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_11__["HomeComponent"],
+                _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_12__["UserDetailComponent"],
+                _home_navigation_home_navigation_component__WEBPACK_IMPORTED_MODULE_13__["HomeNavigationComponent"],
+                _doctor_schedule_doctor_schedule_component__WEBPACK_IMPORTED_MODULE_14__["DoctorScheduleComponent"],
+                _doctor_base_doctor_base_component__WEBPACK_IMPORTED_MODULE_17__["DoctorBaseComponent"],
+                _doctor_profile_doctor_profile_component__WEBPACK_IMPORTED_MODULE_18__["DoctorProfileComponent"],
+                _doctor_find_base_doctor_find_base_component__WEBPACK_IMPORTED_MODULE_19__["DoctorFindBaseComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_20__["FooterComponent"],
+                _card_header_card_header_component__WEBPACK_IMPORTED_MODULE_21__["CardHeaderComponent"],
+                _menu_icon_menu_icon_component__WEBPACK_IMPORTED_MODULE_22__["MenuIconComponent"],
+                _doctor_category_doctor_category_component__WEBPACK_IMPORTED_MODULE_23__["DoctorCategoryComponent"],
+                _list_doctor_by_category_list_doctor_by_category_component__WEBPACK_IMPORTED_MODULE_24__["ListDoctorByCategoryComponent"],
+                _doctor_detail_mini_card_doctor_detail_mini_card_component__WEBPACK_IMPORTED_MODULE_25__["DoctorDetailMiniCardComponent"],
+                _doctor_comments_doctor_comments_component__WEBPACK_IMPORTED_MODULE_26__["DoctorCommentsComponent"],
+                _layanan_layanan_find_base_layanan_find_base_component__WEBPACK_IMPORTED_MODULE_27__["LayananFindBaseComponent"],
+                _layanan_list_layanan_by_category_list_layanan_by_category_component__WEBPACK_IMPORTED_MODULE_28__["ListLayananByCategoryComponent"],
+                _layanan_layanan_detail_mini_card_layanan_detail_mini_card_component__WEBPACK_IMPORTED_MODULE_29__["LayananDetailMiniCardComponent"],
+                _layanan_layanan_profile_layanan_profile_component__WEBPACK_IMPORTED_MODULE_30__["LayananProfileComponent"],
+                _layanan_layanan_category_layanan_category_component__WEBPACK_IMPORTED_MODULE_31__["LayananCategoryComponent"],
+                _my_profile_antrian_saya_antrian_saya_component__WEBPACK_IMPORTED_MODULE_32__["AntrianSayaComponent"],
+                _my_profile_antrian_saya_item_antrian_saya_item_component__WEBPACK_IMPORTED_MODULE_33__["AntrianSayaItemComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_16__["HttpClientModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
-                _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_7__["LayoutModule"],
+                _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_6__["LayoutModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot(appRoutes),
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatPaginatorModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatSortModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_9__["FlexLayoutModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSidenavModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatGridListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatMenuModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatTableModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatPaginatorModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatSortModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"],
             ],
             providers: [
-                _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_17__["DoctorScheduleResolver"]
+                _doctor_schedule_doctor_schedule_resolver__WEBPACK_IMPORTED_MODULE_15__["DoctorScheduleResolver"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
@@ -428,7 +481,7 @@ module.exports = ".text-center {\r\n    text-align: center;\r\n}\r\n\r\n/*# sour
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col s12\">\n\n        <div class=\"card\">\n            <div class=\"card-content text-center\">\n                <img alt=\"Photo Doctor\" class=\"doctor-photo\" src=\"assets/img/doctor/doctor1.png\">\n                <h5><strong>dr. Ayu Rezky Fadlia</strong></h5>\n                <h6>Dokter Umum</h6>\n            </div>\n            <div class=\"card-tabs\">\n                <ul class=\"tabs tabs-fixed-width\">\n                    <li class=\"tab\"><a routerLink=\"/dokter/profil\">Profil</a></li>\n                    <li class=\"tab\"><a class=\"active\" routerLink=\"/dokter/jadwal\">Jadwal</a></li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n    <div class=\"col s12\">\n\n        <div class=\"card\">\n            <div class=\"card-content text-center\">\n                <img alt=\"Photo Doctor\" class=\"doctor-photo\" src=\"assets/img/doctor/doctor1.png\">\n                <h5><strong>dr. Ayu Rezky Fadlia</strong></h5>\n                <h6>Dokter Umum</h6>\n            </div>\n            <div class=\"card-tabs\">\n                <ul class=\"tabs tabs-fixed-width\">\n                    <li class=\"tab\"><a routerLink=\"/dokter/1/profil\">Profil</a></li>\n                    <li class=\"tab\"><a class=\"active\" routerLink=\"/dokter/1/jadwal\">Jadwal</a></li>\n                    <li class=\"tab\"><a class=\"active\" routerLink=\"/dokter/1/komentar\">Komentar</a></li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -522,6 +575,62 @@ var DoctorCategoryComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/doctor-comments/doctor-comments.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/doctor-comments/doctor-comments.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RvY3Rvci1jb21tZW50cy9kb2N0b3ItY29tbWVudHMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/doctor-comments/doctor-comments.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/doctor-comments/doctor-comments.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-doctor-base></app-doctor-base>\n\n<div class=\"container\">\n    <div class=\"section\">\n\n        <div class=\"row\">\n\n            <div class=\"col s12 m6\">\n                <div class=\"card\">\n                    <div class=\"card-content\">\n                        <div class=\"row\">\n                            <h5>Luthfi</h5>\n                            <p>Dokternya baik dan ramah,\n                                serta Alhamdulillah saya beberapa hari kemudian jadi sehat setelah mengikuti saran dokter</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col s12 m6\">\n                <div class=\"card\">\n                    <div class=\"card-content\">\n                        <div class=\"row\">\n                            <h5>Luthfi</h5>\n                            <p>Dokternya baik dan ramah,\n                                serta Alhamdulillah saya beberapa hari kemudian jadi sehat setelah mengikuti saran dokter</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col s12 m6\">\n                <div class=\"card\">\n                    <div class=\"card-content\">\n                        <div class=\"row\">\n                            <h5>Luthfi</h5>\n                            <p>Dokternya baik dan ramah,\n                                serta Alhamdulillah saya beberapa hari kemudian jadi sehat setelah mengikuti saran dokter</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"col s12 m6\">\n                <div class=\"card\">\n                    <div class=\"card-content\">\n                        <div class=\"row\">\n                            <h5>Luthfi</h5>\n                            <p>Dokternya baik dan ramah,\n                                serta Alhamdulillah saya beberapa hari kemudian jadi sehat setelah mengikuti saran dokter</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n\n        </div>\n\n    </div>\n    <br>\n    <br>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/doctor-comments/doctor-comments.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/doctor-comments/doctor-comments.component.ts ***!
+  \**************************************************************/
+/*! exports provided: DoctorCommentsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DoctorCommentsComponent", function() { return DoctorCommentsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var DoctorCommentsComponent = /** @class */ (function () {
+    function DoctorCommentsComponent() {
+    }
+    DoctorCommentsComponent.prototype.ngOnInit = function () {
+    };
+    DoctorCommentsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-doctor-comments',
+            template: __webpack_require__(/*! ./doctor-comments.component.html */ "./src/app/doctor-comments/doctor-comments.component.html"),
+            styles: [__webpack_require__(/*! ./doctor-comments.component.css */ "./src/app/doctor-comments/doctor-comments.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], DoctorCommentsComponent);
+    return DoctorCommentsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/doctor-detail-mini-card/doctor-detail-mini-card.component.css":
 /*!*******************************************************************************!*\
   !*** ./src/app/doctor-detail-mini-card/doctor-detail-mini-card.component.css ***!
@@ -540,7 +649,7 @@ module.exports = ".margin-bottom-zero {\r\n    margin-bottom: 0!important;\r\n}\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a routerLink=\"/dokter/profil\" style=\"color: black;\">\n    <div class=\"card\">\n        <div class=\"card-content\">\n\n            <div class=\"row margin-bottom-zero\">\n                <div class=\"col s3 text-right\">\n                    <img alt=\"Photo Doctor\"\n                         class=\"doctor-photo\"\n                         style=\"width: 60%;\"\n                         src=\"assets/img/doctor/doctor1.png\">\n                </div>\n                <div class=\"col s7\">\n                    <h5 style=\"margin-top: 0;\">dr. Ayu Rezky Fadlia</h5>\n                    <p>Dokter Umum</p>\n                    <p>@ RS Mitra Premiere Jatinegara, Jakarta Timur</p>\n                    <p>Tersedia mulai jam 09:00</p>\n                </div>\n                <div class=\"col s2 text-left\">\n                    <p class=\"text-left\">\n                        99%\n                        <i class=\"material-icons right\">thumb_up</i>\n                    </p>\n                </div>\n            </div>\n\n        </div>\n    </div>\n</a>\n"
+module.exports = "<a routerLink=\"/dokter/profil\" style=\"color: black;\">\n    <div class=\"card\">\n        <div class=\"card-content\">\n\n            <div class=\"row margin-bottom-zero\">\n                <div class=\"col s3 text-right\">\n                    <img alt=\"Photo Doctor\"\n                         class=\"doctor-photo\"\n                         style=\"width: 60%;\"\n                         src=\"assets/img/doctor/doctor1.png\">\n                </div>\n                <div class=\"col s7\">\n                    <h5 style=\"margin-top: 0;\">\n                        dr. Ayu Rezky Fadlias\n                        {{ doctor.doctorName }}\n                    </h5>\n                    <p>Dokter Umum {{ doctor.text }}</p>\n                    <p>@ RS Mitra Premiere Jatinegara, Jakarta Timur</p>\n                    <p>Tersedia mulai jam 09:00</p>\n                </div>\n                <div class=\"col s2 text-left\">\n                    <p class=\"text-left\">\n                        99%\n                        <i class=\"material-icons right\">thumb_up</i>\n                    </p>\n                </div>\n            </div>\n\n        </div>\n    </div>\n</a>\n"
 
 /***/ }),
 
@@ -563,6 +672,10 @@ var DoctorDetailMiniCardComponent = /** @class */ (function () {
     }
     DoctorDetailMiniCardComponent.prototype.ngOnInit = function () {
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], DoctorDetailMiniCardComponent.prototype, "doctor", void 0);
     DoctorDetailMiniCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-doctor-detail-mini-card',
@@ -596,7 +709,7 @@ module.exports = ".margin-bottom-zero {\r\n    margin-bottom: 0!important;\r\n}\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--Cari dokter search bar by name-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card blue darken-1\">\n            <div class=\"card-content text-center white-text\">\n                <span class=\"card-title\">\n                    Yuk, <strong>Cari Dokter!</strong>\n                </span>\n                <p>Cari dokter sesuai kebutuhan Anda.\n                    Pilih dokter, pilih jadwal, pilih rumah sakit.\n                    Anda dapat membuat janji temu dengan dokter Anda.</p>\n            </div>\n            <div class=\"card-action text-center white-text\">\n                <a class=\"text-center white-text\" href=\"#\">Lihat Daftar Antrian Saya</a>\n            </div>\n\n        </div>\n    </div>\n</div>\n\n<!--Cari dokter search bar by name-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card card-custom\">\n            <div class=\"card-content card-content-custom\">\n\n                <div class=\"row row-custom\">\n                    <div class=\"col l8 offset-l2 text-center\">\n\n                        <div class=\"input-field inline input-find-doctor-custom margin-bottom-zero\"\n                                style=\"\">\n                            <input id=\"cari_dokter\" type=\"text\" class=\"validate\">\n                            <label for=\"cari_dokter\" class=\"\">Cari nama dokter</label>\n\n                        </div>\n                        <a href=\"http://materializecss.com/getting-started.html\"\n                           id=\"download-button\"\n                           class=\"btn-small waves-effect waves-light\">\n                            <i class=\"large material-icons\">search</i>\n                        </a>\n\n                    </div>\n                </div>\n\n            </div>\n\n        </div>\n    </div>\n</div>\n\n<!--Cari dokter search bar by specialization-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card card-custom\">\n            <div class=\"card-content card-content-custom\">\n\n                <div class=\"row row-custom\">\n                    <div class=\"col l10 offset-l1 text-center\">\n\n                        <div class=\"input-field inline\">\n                            <!--<input id=\"cari_dokter_2\" type=\"text\" class=\"validate\">-->\n                            <!--<label for=\"cari_dokter_2\" class=\"\">Cari nama dokter</label>-->\n                            <a\n                                routerLink=\"/dokter/kategori\"\n                                class=\"waves-effect waves-light btn-small btn-custom\">\n                                Kategori/Spesialisasi Dokter\n                                <i class=\"material-icons right\">arrow_forward</i>\n                            </a>\n\n                        </div>\n                        <!--<a href=\"http://materializecss.com/getting-started.html\"-->\n                           <!--id=\"cari_dokter_2_icon\"-->\n                           <!--class=\"btn-small waves-effect waves-light\">-->\n                            <!--<i class=\"large material-icons\">arrow_forward</i>-->\n                        <!--</a>-->\n\n                    </div>\n                </div>\n\n            </div>\n\n        </div>\n    </div>\n</div>\n\n\n<!--Docter card mini-->\n<div class=\"row row-custom\">\n\n    <div *ngFor=\"let tile of tiles\" class=\"col l6\">\n        <a routerLink=\"/dokter/profil\" style=\"color: black;\">\n        <div class=\"card\">\n            <div class=\"card-content\">\n\n                <div class=\"row margin-bottom-zero\">\n                    <div class=\"col s3 text-right\">\n                        <img alt=\"Photo Doctor\"\n                             class=\"doctor-photo\"\n                             style=\"width: 60%;\"\n                             src=\"assets/img/doctor/doctor1.png\">\n                    </div>\n                    <div class=\"col s7\">\n                        <h5 style=\"margin-top: 0;\">dr. Ayu Rezky Fadlia</h5>\n                        <p>Dokter Umum</p>\n                        <p>@ RS Mitra Premiere Jatinegara, Jakarta Timur</p>\n                        <p>Tersedia mulai jam 09:00</p>\n                    </div>\n                    <div class=\"col s2 text-left\">\n                        <p class=\"text-left\">\n                            99%\n                            <i class=\"material-icons right\">thumb_up</i>\n                        </p>\n                    </div>\n                </div>\n\n            </div>\n        </div>\n        </a>\n    </div>\n\n\n</div>\n\n\n"
+module.exports = "<!--Cari dokter search bar by name-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card blue darken-1\">\n            <div class=\"card-content text-center white-text\">\n                <span class=\"card-title\">\n                    Yuk, <strong>Cari Dokter!</strong>\n                </span>\n                <p>Cari dokter sesuai kebutuhan Anda.\n                    Pilih dokter, pilih jadwal, pilih rumah sakit.\n                    Anda dapat membuat janji temu dengan dokter Anda.</p>\n            </div>\n            <div class=\"card-action text-center white-text\">\n                <a class=\"text-center white-text\" href=\"#\">Lihat Daftar Antrian Saya</a>\n            </div>\n\n        </div>\n    </div>\n</div>\n\n<!--Cari dokter search bar by name-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card card-custom\">\n            <div class=\"card-content card-content-custom\">\n\n                <div class=\"row row-custom\">\n                    <div class=\"col l8 offset-l2 text-center\">\n\n                        <div class=\"input-field inline input-find-doctor-custom margin-bottom-zero\"\n                                style=\"\">\n                            <input id=\"cari_dokter\" type=\"text\" class=\"validate\">\n                            <label for=\"cari_dokter\" class=\"\">Cari nama dokter</label>\n\n                        </div>\n                        <a href=\"http://materializecss.com/getting-started.html\"\n                           id=\"download-button\"\n                           class=\"btn-small waves-effect waves-light\">\n                            <i class=\"large material-icons\">search</i>\n                        </a>\n\n                    </div>\n                </div>\n\n            </div>\n\n        </div>\n    </div>\n</div>\n\n<!--Cari dokter search bar by specialization-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card card-custom\">\n            <div class=\"card-content card-content-custom\">\n\n                <div class=\"row row-custom\">\n                    <div class=\"col l10 offset-l1 text-center\">\n\n                        <div class=\"input-field inline\">\n                            <!--<input id=\"cari_dokter_2\" type=\"text\" class=\"validate\">-->\n                            <!--<label for=\"cari_dokter_2\" class=\"\">Cari nama dokter</label>-->\n                            <a\n                                routerLink=\"/dokter/kategori\"\n                                class=\"waves-effect waves-light btn-small btn-custom\">\n                                Kategori/Spesialisasi Dokter\n                                <i class=\"material-icons right\">arrow_forward</i>\n                            </a>\n\n                        </div>\n                        <!--<a href=\"http://materializecss.com/getting-started.html\"-->\n                           <!--id=\"cari_dokter_2_icon\"-->\n                           <!--class=\"btn-small waves-effect waves-light\">-->\n                            <!--<i class=\"large material-icons\">arrow_forward</i>-->\n                        <!--</a>-->\n\n                    </div>\n                </div>\n\n            </div>\n\n        </div>\n    </div>\n</div>\n\n\n<!--Docter card mini-->\n<div class=\"row row-custom\">\n\n    <div *ngFor=\"let doctor of doctorLists\" class=\"col l6\">\n\n        <a routerLink=\"/dokter/1/profil\" style=\"color: black;\">\n        <!--<div class=\"card\">-->\n            <!--<div class=\"card-content\">-->\n\n                <!--<div class=\"row margin-bottom-zero\">-->\n                    <!--<div class=\"col s3 text-right\">-->\n                        <!--<img alt=\"Photo Doctor\"-->\n                             <!--class=\"doctor-photo\"-->\n                             <!--style=\"width: 60%;\"-->\n                             <!--src=\"assets/img/doctor/doctor1.png\">-->\n                    <!--</div>-->\n                    <!--<div class=\"col s7\">-->\n                        <!--<h5 style=\"margin-top: 0;\">dr. Ayu Rezky Fadlia</h5>-->\n                        <!--<p>Dokter Umum</p>-->\n                        <!--<p>@ RS Mitra Premiere Jatinegara, Jakarta Timur</p>-->\n                        <!--<p>Tersedia mulai jam 09:00</p>-->\n                    <!--</div>-->\n                    <!--<div class=\"col s2 text-left\">-->\n                        <!--<p class=\"text-left\">-->\n                            <!--99%-->\n                            <!--<i class=\"material-icons right\">thumb_up</i>-->\n                        <!--</p>-->\n                    <!--</div>-->\n                <!--</div>-->\n\n            <!--</div>-->\n        <!--</div>-->\n            <app-doctor-detail-mini-card\n                [doctor]=\"doctor\">\n\n            </app-doctor-detail-mini-card>\n        </a>\n    </div>\n\n\n</div>\n\n\n"
 
 /***/ }),
 
@@ -616,12 +729,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var DoctorFindBaseComponent = /** @class */ (function () {
     function DoctorFindBaseComponent() {
-        this.tiles = [
-            { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
-            { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
-            { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
-            { text: 'Four', cols: 2, rows: 4, color: '#DDBDF1' },
-            { text: 'Four', cols: 2, rows: 4, color: '#DDBDF1' },
+        this.doctorLists = [
+            { text: 'One', cols: 3, rows: 1, color: 'lightblue', doctorName: 'Luthfi Abdurrahim' },
+            { text: 'Two', cols: 1, rows: 2, color: 'lightgreen', doctorName: 'Luthfi Abdurrahim 2' },
+            { text: 'Three', cols: 1, rows: 1, color: 'lightpink', doctorName: 'Luthfi Abdurrahim 3' },
+            { text: 'Four', cols: 2, rows: 4, color: '#DDBDF1', doctorName: 'Luthfi Abdurrahim 4' },
+            { text: 'Four', cols: 2, rows: 4, color: '#DDBDF1', doctorName: 'Luthfi Abdurrahim 5' }
         ];
     }
     DoctorFindBaseComponent.prototype.ngOnInit = function () {
@@ -959,7 +1072,7 @@ module.exports = ".text-center{\r\n    text-align: center;\r\n}\r\n\r\n.text-lef
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<app-dashboard></app-dashboard>-->\r\n<div class=\"container\">\r\n\r\n    <div class=\"row margin-bottom-zero\">\r\n        <div class=\"col s12\">\r\n\r\n            <!--card before login-->\r\n            <!--<div class=\"card\">-->\r\n                <!--<div class=\"card-content\">-->\r\n                    <!--<div class=\"row\">-->\r\n                        <!--<div class=\"col l6 text-center\">-->\r\n                            <!--<span class=\"card-title\">-->\r\n                            <!--Halo, Selamat Datang!-->\r\n                            <!--</span>-->\r\n                        <!--</div>-->\r\n                        <!--<div class=\"col l6 text-center\">-->\r\n                            <!--<a class=\"waves-effect waves-light btn\">-->\r\n                                <!--Tentang Kami-->\r\n                            <!--</a>-->\r\n                        <!--</div>-->\r\n                    <!--</div>-->\r\n                    <!--<p class=\"text-center\">SIRUS.ID adalah aplikasi kesehatan-->\r\n                        <!--yang menghubungkan Rumah Sakit dan-->\r\n                        <!--Fasilitas Kesehatan dengan masyarakat.-->\r\n                        <!--Pengguna dapat membuat janjian dengan dokter,-->\r\n                        <!--mencari rumah sakit terdekat dan layanannya, dll.</p>-->\r\n                <!--</div>-->\r\n                <!--<div class=\"card-action\" style=\"height: 4.5rem;\">-->\r\n\r\n                    <!--<div class=\"row\">-->\r\n                        <!--<div class=\"col l6 text-right\">-->\r\n                            <!--<a class=\"waves-effect waves-light white black-text  btn-small\">-->\r\n                                <!--<i class=\"material-icons left\">person_add</i>-->\r\n                                <!--Registrasi-->\r\n                            <!--</a>-->\r\n                        <!--</div>-->\r\n                        <!--<div class=\"col l6 text-left\">-->\r\n                            <!--<a class=\"waves-effect waves-light btn-small\">-->\r\n                                <!--<i class=\"material-icons right\">chevron_right</i>-->\r\n                                <!--Login-->\r\n                            <!--</a>-->\r\n                        <!--</div>-->\r\n                    <!--</div>-->\r\n\r\n                <!--</div>-->\r\n            <!--</div>-->\r\n\r\n            <!--card after login-->\r\n            <div class=\"card\">\r\n                <div class=\"card-content\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col l5 text-center\">\r\n                            <span class=\"card-title card-title-custom\">\r\n                                Halo, Selamat Datang <strong>Luthfi</strong>!\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col l7 text-right\">\r\n                            <!--<a class=\"waves-effect waves-light btn\">-->\r\n                                <!--Tentang Kami-->\r\n                            <!--</a>-->\r\n                            <div class=\"collection\" style=\"width: 18rem;float:right;\">\r\n\r\n                                <a href=\"#!\" class=\"collection-item collection-item-custom\" style=\"border-left: 0;\">\r\n                                    <i style=\"font-size: 1.5rem\" class=\"material-icons\">add_alarm</i>\r\n                                    <span class=\"new badge badge-custom red\" data-badge-caption=\"janji\">4</span>\r\n                                </a>\r\n                                <a href=\"#!\" class=\"collection-item  collection-item-custom\">\r\n                                    <i style=\"font-size: 1.5rem\" class=\"material-icons\">add_alarm</i>\r\n                                    <span class=\"new badge badge-custom green\" data-badge-caption=\"mitra\">4</span>\r\n                                    <!--V<span class=\"new badge green\" data-badge-caption=\"mitra\">4</span>-->\r\n                                </a>\r\n                                <a href=\"#!\" class=\"collection-item collection-item-custom\">\r\n                                    <i style=\"font-size: 1.5rem\" class=\"material-icons\">add_alarm</i>\r\n                                    <span class=\"new badge badge-custom blue\" data-badge-caption=\"fitur\">4</span>\r\n                                    <!--O<span class=\"new badge blue\" data-badge-caption=\"fitur\">4</span>-->\r\n                                </a>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <p class=\"text-left\">\r\n\r\n                    </p>\r\n                    <p class=\"text-center\">\r\n                        Jadwal janji Anda berikutnya,<br/>\r\n                        <strong>Kamis, 3 Januari 2019<br/>\r\n                        Jam 14.00<br/>\r\n                        @RS Premiere Jatinegara<br/>\r\n                        dengan dr. Median Hardiv Nugraha<br/>\r\n                        </strong>\r\n                    </p>\r\n                </div><!-- end div .card-content -->\r\n                <div class=\"card-action\" style=\"height: 4.5rem;\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col l12 text-center\">\r\n                            <a class=\"waves-effect waves-light btn-small\" style=\"text-transform: capitalize;\">\r\n                                Lihat Daftar Antrian Saya\r\n                                <i class=\"material-icons right\">chevron_right</i>\r\n                            </a>\r\n                        </div>\r\n                    </div>\r\n\r\n                </div><!-- end div .card-action -->\r\n            </div><!-- end div .card -->\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <!--row of menu icons-->\r\n    <div class=\"row\">\r\n\r\n        <div class=\"col s12\">\r\n            <div class=\"card\">\r\n                <div class=\"card-content\">\r\n\r\n                    <div class=\"row\">\r\n\r\n                        <div  *ngFor=\"let menu of menuIcons\" class=\"col s3 text-center\">\r\n                            <a\r\n                                routerLink=\"{{ menu.targetURL }}\"\r\n                                class=\"btn-floating btn-large waves-effect waves-light white\">\r\n                                <img\r\n                                    style=\"max-width: 80%;padding-top: 0.5rem;\"\r\n                                    alt=\"cari-dokter\" src=\"{{ menu.iconURL }}\">\r\n                            </a>\r\n                            <br/>\r\n                            <h6 class=\"text-custom\">{{ menu.name }}</h6>\r\n                        </div>\r\n\r\n                    </div><!--end div .row-->\r\n                </div><!--end div .card-content-->\r\n            </div><!--end div .card-->\r\n        </div><!--end div .col-->\r\n\r\n    </div><!--end div .row-->\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col s12\">\r\n            <div class=\"carousel carousel-slider center carousel-custom\">\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[0].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[0].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[1].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[1].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[2].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[2].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[3].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[3].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[4].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[4].imageURL}}\">\r\n                </a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n"
+module.exports = "<!--<app-dashboard></app-dashboard>-->\r\n<div class=\"container\">\r\n\r\n    <div class=\"row margin-bottom-zero\">\r\n        <div class=\"col s12\">\r\n\r\n            <!--card before login-->\r\n            <!--<div class=\"card\">-->\r\n                <!--<div class=\"card-content\">-->\r\n                    <!--<div class=\"row\">-->\r\n                        <!--<div class=\"col l6 text-center\">-->\r\n                            <!--<span class=\"card-title\">-->\r\n                            <!--Halo, Selamat Datang!-->\r\n                            <!--</span>-->\r\n                        <!--</div>-->\r\n                        <!--<div class=\"col l6 text-center\">-->\r\n                            <!--<a class=\"waves-effect waves-light btn\">-->\r\n                                <!--Tentang Kami-->\r\n                            <!--</a>-->\r\n                        <!--</div>-->\r\n                    <!--</div>-->\r\n                    <!--<p class=\"text-center\">SIRUS.ID adalah aplikasi kesehatan-->\r\n                        <!--yang menghubungkan Rumah Sakit dan-->\r\n                        <!--Fasilitas Kesehatan dengan masyarakat.-->\r\n                        <!--Pengguna dapat membuat janjian dengan dokter,-->\r\n                        <!--mencari rumah sakit terdekat dan layanannya, dll.</p>-->\r\n                <!--</div>-->\r\n                <!--<div class=\"card-action\" style=\"height: 4.5rem;\">-->\r\n\r\n                    <!--<div class=\"row\">-->\r\n                        <!--<div class=\"col l6 text-right\">-->\r\n                            <!--<a class=\"waves-effect waves-light white black-text  btn-small\">-->\r\n                                <!--<i class=\"material-icons left\">person_add</i>-->\r\n                                <!--Registrasi-->\r\n                            <!--</a>-->\r\n                        <!--</div>-->\r\n                        <!--<div class=\"col l6 text-left\">-->\r\n                            <!--<a class=\"waves-effect waves-light btn-small\">-->\r\n                                <!--<i class=\"material-icons right\">chevron_right</i>-->\r\n                                <!--Login-->\r\n                            <!--</a>-->\r\n                        <!--</div>-->\r\n                    <!--</div>-->\r\n\r\n                <!--</div>-->\r\n            <!--</div>-->\r\n\r\n            <!--card after login-->\r\n            <div class=\"card\">\r\n                <div class=\"card-content\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col l5 text-center\">\r\n                            <span class=\"card-title card-title-custom\">\r\n                                Halo, Selamat Datang <strong>Luthfi</strong>!\r\n                            </span>\r\n                        </div>\r\n                        <div class=\"col l7 text-right\">\r\n                            <!--<a class=\"waves-effect waves-light btn\">-->\r\n                                <!--Tentang Kami-->\r\n                            <!--</a>-->\r\n                            <div class=\"collection\" style=\"width: 18rem;float:right;\">\r\n\r\n                                <a href=\"#!\" class=\"collection-item collection-item-custom\" style=\"border-left: 0;\">\r\n                                    <i style=\"font-size: 1.5rem\" class=\"material-icons\">add_alarm</i>\r\n                                    <span class=\"new badge badge-custom red\" data-badge-caption=\"janji\">4</span>\r\n                                </a>\r\n                                <a href=\"#!\" class=\"collection-item  collection-item-custom\">\r\n                                    <i style=\"font-size: 1.5rem\" class=\"material-icons\">add_alarm</i>\r\n                                    <span class=\"new badge badge-custom green\" data-badge-caption=\"mitra\">4</span>\r\n                                    <!--V<span class=\"new badge green\" data-badge-caption=\"mitra\">4</span>-->\r\n                                </a>\r\n                                <a href=\"#!\" class=\"collection-item collection-item-custom\">\r\n                                    <i style=\"font-size: 1.5rem\" class=\"material-icons\">add_alarm</i>\r\n                                    <span class=\"new badge badge-custom blue\" data-badge-caption=\"fitur\">4</span>\r\n                                    <!--O<span class=\"new badge blue\" data-badge-caption=\"fitur\">4</span>-->\r\n                                </a>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <p class=\"text-left\">\r\n\r\n                    </p>\r\n                    <p class=\"text-center\">\r\n                        Jadwal janji Anda berikutnya,<br/>\r\n                        <strong>Kamis, 3 Januari 2019<br/>\r\n                        Jam 14.00<br/>\r\n                        @RS Premiere Jatinegara<br/>\r\n                        dengan dr. Median Hardiv Nugraha<br/>\r\n                        </strong>\r\n                    </p>\r\n                </div><!-- end div .card-content -->\r\n                <div class=\"card-action\" style=\"height: 4.5rem;\">\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col l12 text-center\">\r\n                            <a routerLink=\"profil-saya/antrian\" class=\"waves-effect waves-light btn-small\" style=\"text-transform: capitalize;\">\r\n                                Lihat Daftar Antrian Saya\r\n                                <i class=\"material-icons right\">chevron_right</i>\r\n                            </a>\r\n                        </div>\r\n                    </div>\r\n\r\n                </div><!-- end div .card-action -->\r\n            </div><!-- end div .card -->\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <!--row of menu icons-->\r\n    <div class=\"row\">\r\n\r\n        <div class=\"col s12\">\r\n            <div class=\"card\">\r\n                <div class=\"card-content\">\r\n\r\n                    <div class=\"row\">\r\n\r\n                        <div  *ngFor=\"let menu of menuIcons\" class=\"col s3 text-center\">\r\n                            <a\r\n                                routerLink=\"{{ menu.targetURL }}\"\r\n                                class=\"btn-floating btn-large waves-effect waves-light white\">\r\n                                <img\r\n                                    style=\"max-width: 80%;padding-top: 0.5rem;\"\r\n                                    alt=\"cari-dokter\" src=\"{{ menu.iconURL }}\">\r\n                            </a>\r\n                            <br/>\r\n                            <h6 class=\"text-custom\">{{ menu.name }}</h6>\r\n                        </div>\r\n\r\n                    </div><!--end div .row-->\r\n                </div><!--end div .card-content-->\r\n            </div><!--end div .card-->\r\n        </div><!--end div .col-->\r\n\r\n    </div><!--end div .row-->\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col s12\">\r\n            <div class=\"carousel carousel-slider center carousel-custom\">\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[0].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[0].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[1].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[1].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[2].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[2].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[3].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[3].imageURL}}\">\r\n                </a>\r\n                <a class=\"carousel-item\"\r\n                   routerLink=\"{{ carouselContents[4].targetURL}}\">\r\n                    <img src=\"{{ carouselContents[4].imageURL}}\">\r\n                </a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -987,35 +1100,36 @@ var HomeComponent = /** @class */ (function () {
             fullWidth: true,
             indicators: true
         };
+        this.flag_active = true;
         this.carouselContents = [
             {
                 index: 1,
-                imageURL: 'https://lorempixel.com/800/400/city/1',
+                imageURL: '/assets/img/carousel/1.jpg',
                 targetURL: '/dokter/cari'
             },
             {
                 index: 2,
-                imageURL: 'https://lorempixel.com/800/400/city/2',
+                imageURL: '/assets/img/carousel/5.jpg',
                 targetURL: '/dokter/cari'
             },
             {
                 index: 3,
-                imageURL: 'https://lorempixel.com/800/400/city/3',
+                imageURL: '/assets/img/carousel/6.jpg',
                 targetURL: '/dokter/cari'
             },
             {
                 index: 4,
-                imageURL: 'https://lorempixel.com/800/400/city/4',
+                imageURL: '/assets/img/carousel/7.jpg',
                 targetURL: '/dokter/cari'
             },
             {
                 index: 5,
-                imageURL: 'https://lorempixel.com/800/400/city/5',
+                imageURL: '/assets/img/carousel/8.jpg',
                 targetURL: '/dokter/cari'
             },
             {
                 index: 6,
-                imageURL: 'https://lorempixel.com/800/400/city/6',
+                imageURL: '/assets/img/carousel/2.jpg',
                 targetURL: '/dokter/cari'
             }
         ];
@@ -1084,6 +1198,293 @@ var HomeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-category/layanan-category.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/layanan/layanan-category/layanan-category.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".title-custom {\r\n    font-size: 1rem;\r\n    cursor: inherit;\r\n    width: 20rem;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGF5YW5hbi9sYXlhbmFuLWNhdGVnb3J5L2xheWFuYW4tY2F0ZWdvcnkuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGVBQWU7SUFDZixlQUFlO0lBQ2YsWUFBWTtBQUNoQiIsImZpbGUiOiJzcmMvYXBwL2xheWFuYW4vbGF5YW5hbi1jYXRlZ29yeS9sYXlhbmFuLWNhdGVnb3J5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGl0bGUtY3VzdG9tIHtcclxuICAgIGZvbnQtc2l6ZTogMXJlbTtcclxuICAgIGN1cnNvcjogaW5oZXJpdDtcclxuICAgIHdpZHRoOiAyMHJlbTtcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-category/layanan-category.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/layanan/layanan-category/layanan-category.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav style=\"background-color: #27A9E1;\">\n    <div class=\"nav-wrapper\">\n        <a routerLink=\"/layanan/cari\"\n           style=\"font-size: 1rem;float: left;margin-left: 1.5%;\">\n            <i class=\"material-icons\">arrow_back</i>\n        </a>\n        <a class=\"brand-logo center title-custom\">\n            Cari Layanan dan Rumah Sakit per Kategori\n        </a>\n    </div>\n</nav>\n\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col s12\">\n            <div class=\"collection\">\n                <a routerLink=\"/dokter/kategori/dokter-umum\" class=\"collection-item\">\n                    Layanan Umum\n                    <span class=\"badge\">\n                        <i class=\"material-icons\">chevron_right</i>\n                    </span>\n                </a>\n                <a routerLink=\"/dokter/kategori/dokter-umum\" class=\"collection-item\">\n                    Dokter Spesialis Anak\n                    <span class=\"badge\">\n                        <i class=\"material-icons\">chevron_right</i>\n                    </span>\n                </a>\n                <a routerLink=\"/dokter/kategori/dokter-umum\" class=\"collection-item\">\n                    Dokter Spesialis Bedah Plastik\n                    <span class=\"badge\">\n                        <i class=\"material-icons\">chevron_right</i>\n                    </span>\n                </a>\n                <a routerLink=\"/dokter/kategori/dokter-umum\" class=\"collection-item\">\n                    Dokter Spesialis Bedah Saraf\n                    <span class=\"badge\">\n                        <i class=\"material-icons\">chevron_right</i>\n                    </span>\n                </a>\n                <a routerLink=\"/dokter/kategori/dokter-umum\" class=\"collection-item\">\n                    Dokter Spesialis Gizi Klinik\n                    <span class=\"badge\">\n                        <i class=\"material-icons\">chevron_right</i>\n                    </span>\n                </a>\n                <a routerLink=\"/dokter/kategori/dokter-umum\" class=\"collection-item\">\n                    Dokter Spesialis Jantung dan Pembuluh Darah\n                    <span class=\"badge\">\n                        <i class=\"material-icons\">chevron_right</i>\n                    </span>\n                </a>\n                <!--<a href=\"#!\" class=\"collection-item\"><span class=\"new badge\">4</span>Alan</a>-->\n                <!--<a href=\"#!\" class=\"collection-item\">Alan</a>-->\n                <!--<a href=\"#!\" class=\"collection-item\"><span class=\"badge\">14</span>Alan</a>-->\n            </div>\n        </div>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-category/layanan-category.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/layanan/layanan-category/layanan-category.component.ts ***!
+  \************************************************************************/
+/*! exports provided: LayananCategoryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayananCategoryComponent", function() { return LayananCategoryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LayananCategoryComponent = /** @class */ (function () {
+    function LayananCategoryComponent() {
+    }
+    LayananCategoryComponent.prototype.ngOnInit = function () {
+    };
+    LayananCategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-layanan-category',
+            template: __webpack_require__(/*! ./layanan-category.component.html */ "./src/app/layanan/layanan-category/layanan-category.component.html"),
+            styles: [__webpack_require__(/*! ./layanan-category.component.css */ "./src/app/layanan/layanan-category/layanan-category.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], LayananCategoryComponent);
+    return LayananCategoryComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheWFuYW4vbGF5YW5hbi1kZXRhaWwtbWluaS1jYXJkL2xheWFuYW4tZGV0YWlsLW1pbmktY2FyZC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  layanan-detail-mini-card works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: LayananDetailMiniCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayananDetailMiniCardComponent", function() { return LayananDetailMiniCardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LayananDetailMiniCardComponent = /** @class */ (function () {
+    function LayananDetailMiniCardComponent() {
+    }
+    LayananDetailMiniCardComponent.prototype.ngOnInit = function () {
+    };
+    LayananDetailMiniCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-layanan-detail-mini-card',
+            template: __webpack_require__(/*! ./layanan-detail-mini-card.component.html */ "./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.html"),
+            styles: [__webpack_require__(/*! ./layanan-detail-mini-card.component.css */ "./src/app/layanan/layanan-detail-mini-card/layanan-detail-mini-card.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], LayananDetailMiniCardComponent);
+    return LayananDetailMiniCardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-find-base/layanan-find-base.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/layanan/layanan-find-base/layanan-find-base.component.css ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".margin-bottom-zero {\r\n    margin-bottom: 0!important;\r\n}\r\n\r\n.row-custom {\r\n    margin-bottom: 5px!important;\r\n}\r\n\r\n.card-custom {\r\n    min-width: 25rem;\r\n    padding: 0!important;\r\n    margin: 0!important;\r\n    max-height: 5rem;\r\n}\r\n\r\n.input-find-doctor-custom {\r\n    width:15rem;\r\n}\r\n\r\n.card-content-custom {\r\n    padding-top: 0!important;\r\n    padding-bottom: 0!important;\r\n}\r\n\r\n.btn-custom {\r\n    text-transform: capitalize!important;\r\n}\r\n\r\n.text-center {\r\n    text-align: center;\r\n}\r\n\r\n.text-right {\r\n    text-align: right;\r\n}\r\n\r\n.text-left {\r\n    text-align: left;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGF5YW5hbi9sYXlhbmFuLWZpbmQtYmFzZS9sYXlhbmFuLWZpbmQtYmFzZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksMEJBQTBCO0FBQzlCOztBQUVBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksZ0JBQWdCO0lBQ2hCLG9CQUFvQjtJQUNwQixtQkFBbUI7SUFDbkIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksd0JBQXdCO0lBQ3hCLDJCQUEyQjtBQUMvQjs7QUFFQTtJQUNJLG9DQUFvQztBQUN4Qzs7QUFFQTtJQUNJLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2xheWFuYW4vbGF5YW5hbi1maW5kLWJhc2UvbGF5YW5hbi1maW5kLWJhc2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYXJnaW4tYm90dG9tLXplcm8ge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMCFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5yb3ctY3VzdG9tIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDVweCFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi5jYXJkLWN1c3RvbSB7XHJcbiAgICBtaW4td2lkdGg6IDI1cmVtO1xyXG4gICAgcGFkZGluZzogMCFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW46IDAhaW1wb3J0YW50O1xyXG4gICAgbWF4LWhlaWdodDogNXJlbTtcclxufVxyXG5cclxuLmlucHV0LWZpbmQtZG9jdG9yLWN1c3RvbSB7XHJcbiAgICB3aWR0aDoxNXJlbTtcclxufVxyXG5cclxuLmNhcmQtY29udGVudC1jdXN0b20ge1xyXG4gICAgcGFkZGluZy10b3A6IDAhaW1wb3J0YW50O1xyXG4gICAgcGFkZGluZy1ib3R0b206IDAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4uYnRuLWN1c3RvbSB7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZSFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi50ZXh0LWNlbnRlciB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi50ZXh0LXJpZ2h0IHtcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG59XHJcblxyXG4udGV4dC1sZWZ0IHtcclxuICAgIHRleHQtYWxpZ246IGxlZnQ7XHJcbn1cclxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-find-base/layanan-find-base.component.html":
+/*!****************************************************************************!*\
+  !*** ./src/app/layanan/layanan-find-base/layanan-find-base.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!--Cari dokter search bar by name-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card blue darken-1\">\n            <div class=\"card-content text-center white-text\">\n                <span class=\"card-title\">\n                    Yuk, <strong>Cari Layanan Kesehatan!</strong>\n                </span>\n                <p>Cari Layanan sesuai kebutuhan Anda.\n                    Pilih layanan, pilih jadwal, pilih rumah sakit.\n                    Anda dapat memilih layanan kesehatan dimana saja.</p>\n            </div>\n            <div class=\"card-action text-center white-text\">\n                <a class=\"text-center white-text\" href=\"#\">Lihat Daftar Antrian Saya</a>\n            </div>\n\n        </div>\n    </div>\n</div>\n\n<!--Cari dokter search bar by name-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card card-custom\">\n            <div class=\"card-content card-content-custom\">\n\n                <div class=\"row row-custom\">\n                    <div class=\"col l8 offset-l2 text-center\">\n\n                        <div class=\"input-field inline input-find-doctor-custom margin-bottom-zero\"\n                             style=\"\">\n                            <input id=\"cari_layanan\" type=\"text\" class=\"validate\">\n                            <label for=\"cari_layanan\" class=\"\">Cari layanan atau Rumah Sakit</label>\n\n                        </div>\n                        <a href=\"http://materializecss.com/getting-started.html\"\n                           id=\"download-button\"\n                           class=\"btn-small waves-effect waves-light\">\n                            <i class=\"large material-icons\">search</i>\n                        </a>\n\n                    </div>\n                </div>\n\n            </div>\n\n        </div>\n    </div>\n</div>\n\n<!--Cari dokter search bar by specialization-->\n<div class=\"row row-custom\">\n    <div class=\"col l6 offset-l3\">\n        <div class=\"card card-custom\">\n            <div class=\"card-content card-content-custom\">\n\n                <div class=\"row row-custom\">\n                    <div class=\"col l10 offset-l1 text-center\">\n\n                        <div class=\"input-field inline\">\n\n                            <a\n                                routerLink=\"/layanan/kategori\"\n                                class=\"waves-effect waves-light btn-small btn-custom\">\n                                Cari Layanan Berdasarkan Kategori\n                                <i class=\"material-icons right\">arrow_forward</i>\n                            </a>\n\n                        </div>\n\n                    </div>\n                </div>\n\n            </div>\n\n        </div>\n    </div>\n</div>\n\n\n<!--Docter card mini-->\n<div class=\"row row-custom\">\n\n    <div *ngFor=\"let row of daftarLayanan\" class=\"col l6\">\n        <a routerLink=\"/dokter/1/profil\" style=\"color: black;\">\n            <div class=\"card\">\n                <div class=\"card-content\">\n\n                    <div class=\"row margin-bottom-zero\">\n                        <div class=\"col s3 text-right\">\n                            <img alt=\"Photo Doctor\"\n                                 class=\"doctor-photo\"\n                                 style=\"width: 100%;\"\n                                 src=\"assets/img/icon/lab-clinic-icon.png\">\n                        </div>\n                        <div class=\"col s9\">\n                            <h5 style=\" margin-top: 0;\">\n                                Laboratorium Klinik\n                            </h5>\n                            <p>\n                                @ RS Mitra Jatinegara, Jakarta Timur, 5 km dari Anda\n                            </p>\n                            <p class=\"green-text accent-3\">Tersedia mulai jam 09:00</p>\n                        </div>\n\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col s12 text-left\">\n                            <p class=\"text-right\" style=\"color: #00e676; \">\n                                99%\n                                <i class=\"material-icons right\">thumb_up</i>\n                            </p>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n        </a>\n    </div>\n\n\n</div>\n\n\n"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-find-base/layanan-find-base.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/layanan/layanan-find-base/layanan-find-base.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: LayananFindBaseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayananFindBaseComponent", function() { return LayananFindBaseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LayananFindBaseComponent = /** @class */ (function () {
+    function LayananFindBaseComponent() {
+        this.daftarLayanan = [
+            { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
+            { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
+            { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
+            { text: 'Four', cols: 2, rows: 4, color: '#DDBDF1' },
+            { text: 'Four', cols: 2, rows: 4, color: '#DDBDF1' },
+        ];
+    }
+    LayananFindBaseComponent.prototype.ngOnInit = function () {
+    };
+    LayananFindBaseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-layanan-find-base',
+            template: __webpack_require__(/*! ./layanan-find-base.component.html */ "./src/app/layanan/layanan-find-base/layanan-find-base.component.html"),
+            styles: [__webpack_require__(/*! ./layanan-find-base.component.css */ "./src/app/layanan/layanan-find-base/layanan-find-base.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], LayananFindBaseComponent);
+    return LayananFindBaseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-profile/layanan-profile.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/layanan/layanan-profile/layanan-profile.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheWFuYW4vbGF5YW5hbi1wcm9maWxlL2xheWFuYW4tcHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-profile/layanan-profile.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/layanan/layanan-profile/layanan-profile.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  layanan-profile works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/layanan/layanan-profile/layanan-profile.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/layanan/layanan-profile/layanan-profile.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: LayananProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayananProfileComponent", function() { return LayananProfileComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LayananProfileComponent = /** @class */ (function () {
+    function LayananProfileComponent() {
+    }
+    LayananProfileComponent.prototype.ngOnInit = function () {
+    };
+    LayananProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-layanan-profile',
+            template: __webpack_require__(/*! ./layanan-profile.component.html */ "./src/app/layanan/layanan-profile/layanan-profile.component.html"),
+            styles: [__webpack_require__(/*! ./layanan-profile.component.css */ "./src/app/layanan/layanan-profile/layanan-profile.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], LayananProfileComponent);
+    return LayananProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheWFuYW4vbGlzdC1sYXlhbmFuLWJ5LWNhdGVnb3J5L2xpc3QtbGF5YW5hbi1ieS1jYXRlZ29yeS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav style=\"background-color: #27A9E1;\">\n    <div class=\"nav-wrapper\">\n        <a routerLink=\"/dokter/kategori\"\n           style=\"font-size: 1rem;float: left;margin-left: 1.5%;\">\n            <i class=\"material-icons\">arrow_back</i>\n        </a>\n        <a class=\"brand-logo center title-custom\">\n            Cari Dokter Umum\n        </a>\n    </div>\n</nav>\n\n<!--Docter card mini-->\n<div class=\"row row-custom\">\n\n    <div *ngFor=\"let doc of doctorCards\" class=\"col l6\">\n        <app-doctor-detail-mini-card></app-doctor-detail-mini-card>\n    </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: ListLayananByCategoryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListLayananByCategoryComponent", function() { return ListLayananByCategoryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ListLayananByCategoryComponent = /** @class */ (function () {
+    function ListLayananByCategoryComponent() {
+    }
+    ListLayananByCategoryComponent.prototype.ngOnInit = function () {
+    };
+    ListLayananByCategoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-list-layanan-by-category',
+            template: __webpack_require__(/*! ./list-layanan-by-category.component.html */ "./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.html"),
+            styles: [__webpack_require__(/*! ./list-layanan-by-category.component.css */ "./src/app/layanan/list-layanan-by-category/list-layanan-by-category.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ListLayananByCategoryComponent);
+    return ListLayananByCategoryComponent;
 }());
 
 
@@ -1265,61 +1666,180 @@ var MenuIconComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/navbar/navbar.component.css":
-/*!*********************************************!*\
-  !*** ./src/app/navbar/navbar.component.css ***!
-  \*********************************************/
+/***/ "./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.css":
+/*!******************************************************************************!*\
+  !*** ./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.css ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sidenav-container {\r\n  height: 100%;\r\n}\r\n\r\n.sidenav {\r\n  width: 200px;\r\n}\r\n\r\n.sidenav .mat-toolbar {\r\n  background: inherit;\r\n}\r\n\r\n.mat-toolbar.mat-primary {\r\n  position: -webkit-sticky;\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 1;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBQ0UsWUFBWTtBQUNkOztBQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0Usd0JBQWdCO0VBQWhCLGdCQUFnQjtFQUNoQixNQUFNO0VBQ04sVUFBVTtBQUNaIiwiZmlsZSI6InNyYy9hcHAvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNpZGVuYXYtY29udGFpbmVyIHtcclxuICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbi5zaWRlbmF2IHtcclxuICB3aWR0aDogMjAwcHg7XHJcbn1cclxuXHJcbi5zaWRlbmF2IC5tYXQtdG9vbGJhciB7XHJcbiAgYmFja2dyb3VuZDogaW5oZXJpdDtcclxufVxyXG5cclxuLm1hdC10b29sYmFyLm1hdC1wcmltYXJ5IHtcclxuICBwb3NpdGlvbjogc3RpY2t5O1xyXG4gIHRvcDogMDtcclxuICB6LWluZGV4OiAxO1xyXG59XHJcbiJdfQ== */"
+module.exports = ".row-custom {\r\n    margin-bottom: 5px!important;\r\n}\r\n\r\n.title-custom {\r\n    font-size: 1.5rem;\r\n    cursor: inherit;\r\n    width: 20rem;\r\n}\r\n\r\n.text-right {\r\n    text-align: right;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbXktcHJvZmlsZS9hbnRyaWFuLXNheWEtaXRlbS9hbnRyaWFuLXNheWEtaXRlbS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGVBQWU7SUFDZixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvbXktcHJvZmlsZS9hbnRyaWFuLXNheWEtaXRlbS9hbnRyaWFuLXNheWEtaXRlbS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJvdy1jdXN0b20ge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNXB4IWltcG9ydGFudDtcclxufVxyXG5cclxuLnRpdGxlLWN1c3RvbSB7XHJcbiAgICBmb250LXNpemU6IDEuNXJlbTtcclxuICAgIGN1cnNvcjogaW5oZXJpdDtcclxuICAgIHdpZHRoOiAyMHJlbTtcclxufVxyXG5cclxuLnRleHQtcmlnaHQge1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
-/***/ "./src/app/navbar/navbar.component.html":
-/*!**********************************************!*\
-  !*** ./src/app/navbar/navbar.component.html ***!
-  \**********************************************/
+/***/ "./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.html ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\r\n    <mat-sidenav #drawer class=\"sidenav\" fixedInViewport=\"true\"\r\n                 [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n                 [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\r\n                 [opened]=\"!(isHandset$ | async)\">\r\n        <mat-toolbar>Menu</mat-toolbar>\r\n        <mat-nav-list>\r\n            <a mat-list-item href=\"#\">Beranda</a>\r\n            <a mat-list-item href=\"#\">Link 2</a>\r\n            <a mat-list-item href=\"#\">Link 3</a>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n        <mat-toolbar color=\"primary\">\r\n            <button\r\n                type=\"button\"\r\n                aria-label=\"Toggle sidenav\"\r\n                mat-icon-button\r\n                (click)=\"drawer.toggle()\"\r\n                *ngIf=\"isHandset$ | async\">\r\n                <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n            </button>\r\n            <span>SIRUS 2.0</span>\r\n        </mat-toolbar>\r\n        <!-- Add Content Here -->\r\n\r\n\r\n\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
+module.exports = "<!--<a routerLink=\"/dokter/{{antrian.doctor_id}}/profil\" style=\"color: black;\">-->\n<a [routerLink]=\"['/dokter', antrian_item.doctor_id, 'profil']\" style=\"color: black;\">\n    <!--\n    doctor_id: number;\n    hour_appt: string;\n    date_appt: string;\n    doctor_name: string;\n    hospital_name: string;\n    start_time_avail: string;\n    current_seq: number;\n    my_seq: number;\n    last_seq: number;\n    -->\n    <div class=\"card\">\n        <div class=\"card-content\">\n\n            <div class=\"row margin-bottom-zero\">\n                <div class=\"col s3 text-right\">\n                    <img alt=\"Photo Doctor\"\n                         class=\"doctor-photo\"\n                         style=\"width: 5rem;\"\n                         src=\"assets/img/doctor/doctor1.png\">\n                </div>\n                <div class=\"col s9\">\n                        <span class=\"card-title\">\n                            Janji Anda Jam {{antrian_item.hour_appt}}, <br/>\n                            Senin, 18 Februari 2019\n                        </span>\n                    <h5 style=\" margin-top: 0;\">\n                        {{antrian_item.doctor_name}}\n                    </h5>\n                    <p>\n                        {{antrian_item.hospital_name}}\n                    </p>\n                    <p class=\"green-text accent-3\">Tersedia mulai jam {{antrian_item.start_time_avail}}</p>\n                </div>\n\n            </div>\n            <div class=\"row\">\n                <div class=\"col s12 text-left\">\n                    <p class=\"text-right red-text accent-3\">\n                        Sekarang sedang <strong>urutan ke {{antrian_item.current_seq}}</strong>\n                    </p>\n                    <p class=\"text-right green-text accent-3\">\n                        Anda berada di <strong>urutan ke {{antrian_item.my_seq}} dari {{antrian_item.last_seq}}</strong>\n                        <i class=\"material-icons right\">info_outline</i>\n                    </p>\n                </div>\n            </div>\n\n        </div>\n    </div>\n</a>\n"
 
 /***/ }),
 
-/***/ "./src/app/navbar/navbar.component.ts":
-/*!********************************************!*\
-  !*** ./src/app/navbar/navbar.component.ts ***!
-  \********************************************/
-/*! exports provided: NavbarComponent */
+/***/ "./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: AntrianSayaItemComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavbarComponent", function() { return NavbarComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AntrianSayaItemComponent", function() { return AntrianSayaItemComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 
 
-
-
-var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent(breakpointObserver) {
-        this.breakpointObserver = breakpointObserver;
-        this.isHandset$ = this.breakpointObserver.observe(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["Breakpoints"].Handset)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) { return result.matches; }));
+var AntrianSayaItemComponent = /** @class */ (function () {
+    function AntrianSayaItemComponent() {
     }
-    NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    AntrianSayaItemComponent.prototype.ngOnInit = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], AntrianSayaItemComponent.prototype, "antrian_item", void 0);
+    AntrianSayaItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-navbar',
-            template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/navbar/navbar.component.html"),
-            styles: [__webpack_require__(/*! ./navbar.component.css */ "./src/app/navbar/navbar.component.css")]
+            selector: 'app-antrian-saya-item',
+            template: __webpack_require__(/*! ./antrian-saya-item.component.html */ "./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.html"),
+            styles: [__webpack_require__(/*! ./antrian-saya-item.component.css */ "./src/app/my-profile/antrian-saya-item/antrian-saya-item.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["BreakpointObserver"]])
-    ], NavbarComponent);
-    return NavbarComponent;
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AntrianSayaItemComponent);
+    return AntrianSayaItemComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/my-profile/antrian-saya/antrian-saya.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/my-profile/antrian-saya/antrian-saya.component.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".row-custom {\r\n    margin-bottom: 5px!important;\r\n}\r\n\r\n.title-custom {\r\n    font-size: 1.5rem;\r\n    cursor: inherit;\r\n    width: 20rem;\r\n}\r\n\r\n.text-right {\r\n    text-align: right;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbXktcHJvZmlsZS9hbnRyaWFuLXNheWEvYW50cmlhbi1zYXlhLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9teS1wcm9maWxlL2FudHJpYW4tc2F5YS9hbnRyaWFuLXNheWEuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yb3ctY3VzdG9tIHtcclxuICAgIG1hcmdpbi1ib3R0b206IDVweCFpbXBvcnRhbnQ7XHJcbn1cclxuXHJcbi50aXRsZS1jdXN0b20ge1xyXG4gICAgZm9udC1zaXplOiAxLjVyZW07XHJcbiAgICBjdXJzb3I6IGluaGVyaXQ7XHJcbiAgICB3aWR0aDogMjByZW07XHJcbn1cclxuXHJcbi50ZXh0LXJpZ2h0IHtcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG59XHJcbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/my-profile/antrian-saya/antrian-saya.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/my-profile/antrian-saya/antrian-saya.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav style=\"background-color: #27A9E1;\">\n    <div class=\"nav-wrapper\">\n        <a routerLink=\"/\"\n           style=\"font-size: 1rem;float: left;margin-left: 1.5%;\">\n            <i class=\"material-icons\">arrow_back</i>\n        </a>\n        <a class=\"brand-logo center title-custom\">\n            Antrian Saya\n        </a>\n    </div>\n</nav>\n\n<!--Docter card mini-->\n<div class=\"row row-custom\">\n\n    <div *ngFor=\"let antrianData of antrianLists\" class=\"col l6\">\n        <!--<app-doctor-detail-mini-card-->\n            <!--[doctor]=\"doctor\">-->\n\n        <!--</app-doctor-detail-mini-card>-->\n\n        <app-antrian-saya-item\n            [antrian_item]=\"antrianData\"\n            >\n        </app-antrian-saya-item>\n\n    </div>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/my-profile/antrian-saya/antrian-saya.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/my-profile/antrian-saya/antrian-saya.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: AntrianSayaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AntrianSayaComponent", function() { return AntrianSayaComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AntrianSayaComponent = /** @class */ (function () {
+    function AntrianSayaComponent() {
+        // doctorCards: DoctorCards[] = [
+        //     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
+        //     {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
+        //     {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+        //     {text: 'Four', cols: 2, rows: 4, color: '#DDBDF1'},
+        //     {text: 'Four', cols: 2, rows: 4, color: '#DDBDF1'},
+        // ];
+        this.antrianLists = [
+            {
+                doctor_id: 1,
+                hour_appt: '14:00',
+                date_appt: 'Senin, 18 Februari 2019',
+                doctor_name: 'dr. Ayu Rezky Fadlia',
+                hospital_name: '@ RS Mitra Jatinegara, Jakarta Timur, 5 km dari Anda',
+                start_time_avail: '09:00',
+                current_seq: 5,
+                my_seq: 9,
+                last_seq: 20
+            },
+            {
+                doctor_id: 2,
+                hour_appt: '14:00',
+                date_appt: 'Senin, 18 Februari 2019',
+                doctor_name: 'dr. Ayu Rezky Fadlia',
+                hospital_name: '@ RS Mitra Jatinegara, Jakarta Timur, 5 km dari Anda',
+                start_time_avail: '09:00',
+                current_seq: 5,
+                my_seq: 9,
+                last_seq: 20
+            },
+            {
+                doctor_id: 3,
+                hour_appt: '14:00',
+                date_appt: 'Senin, 18 Februari 2019',
+                doctor_name: 'dr. Ayu Rezky Fadlia',
+                hospital_name: '@ RS Mitra Jatinegara, Jakarta Timur, 5 km dari Anda',
+                start_time_avail: '09:00',
+                current_seq: 5,
+                my_seq: 9,
+                last_seq: 20
+            },
+            {
+                doctor_id: 4,
+                hour_appt: '14:00',
+                date_appt: 'Senin, 18 Februari 2019',
+                doctor_name: 'dr. Ayu Rezky Fadlia',
+                hospital_name: '@ RS Mitra Jatinegara, Jakarta Timur, 5 km dari Anda',
+                start_time_avail: '09:00',
+                current_seq: 5,
+                my_seq: 9,
+                last_seq: 20
+            },
+            {
+                doctor_id: 5,
+                hour_appt: '14:00',
+                date_appt: 'Senin, 18 Februari 2019',
+                doctor_name: 'dr. Ayu Rezky Fadlia',
+                hospital_name: '@ RS Mitra Jatinegara, Jakarta Timur, 5 km dari Anda',
+                start_time_avail: '09:00',
+                current_seq: 5,
+                my_seq: 9,
+                last_seq: 20
+            },
+        ];
+    }
+    AntrianSayaComponent.prototype.ngOnInit = function () {
+    };
+    AntrianSayaComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-antrian-saya',
+            template: __webpack_require__(/*! ./antrian-saya.component.html */ "./src/app/my-profile/antrian-saya/antrian-saya.component.html"),
+            styles: [__webpack_require__(/*! ./antrian-saya.component.css */ "./src/app/my-profile/antrian-saya/antrian-saya.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AntrianSayaComponent);
+    return AntrianSayaComponent;
 }());
 
 
@@ -1361,193 +1881,6 @@ var TestDuaService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], TestDuaService);
     return TestDuaService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/table/table-datasource.ts":
-/*!*******************************************!*\
-  !*** ./src/app/table/table-datasource.ts ***!
-  \*******************************************/
-/*! exports provided: TableDataSource */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableDataSource", function() { return TableDataSource; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/collections */ "./node_modules/@angular/cdk/esm5/collections.es5.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-
-
-
-
-// TODO: replace this with real data from your application
-var EXAMPLE_DATA = [
-    { id: 1, name: 'Hydrogen' },
-    { id: 2, name: 'Helium' },
-    { id: 3, name: 'Lithium' },
-    { id: 4, name: 'Beryllium' },
-    { id: 5, name: 'Boron' },
-    { id: 6, name: 'Carbon' },
-    { id: 7, name: 'Nitrogen' },
-    { id: 8, name: 'Oxygen' },
-    { id: 9, name: 'Fluorine' },
-    { id: 10, name: 'Neon' },
-    { id: 11, name: 'Sodium' },
-    { id: 12, name: 'Magnesium' },
-    { id: 13, name: 'Aluminum' },
-    { id: 14, name: 'Silicon' },
-    { id: 15, name: 'Phosphorus' },
-    { id: 16, name: 'Sulfur' },
-    { id: 17, name: 'Chlorine' },
-    { id: 18, name: 'Argon' },
-    { id: 19, name: 'Potassium' },
-    { id: 20, name: 'Calcium' },
-];
-/**
- * Data source for the Table view. This class should
- * encapsulate all logic for fetching and manipulating the displayed data
- * (including sorting, pagination, and filtering).
- */
-var TableDataSource = /** @class */ (function (_super) {
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](TableDataSource, _super);
-    function TableDataSource(paginator, sort) {
-        var _this = _super.call(this) || this;
-        _this.paginator = paginator;
-        _this.sort = sort;
-        _this.data = EXAMPLE_DATA;
-        return _this;
-    }
-    /**
-     * Connect this data source to the table. The table will only update when
-     * the returned stream emits new items.
-     * @returns A stream of the items to be rendered.
-     */
-    TableDataSource.prototype.connect = function () {
-        var _this = this;
-        // Combine everything that affects the rendered data into one update
-        // stream for the data-table to consume.
-        var dataMutations = [
-            Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(this.data),
-            this.paginator.page,
-            this.sort.sortChange
-        ];
-        // Set the paginator's length
-        this.paginator.length = this.data.length;
-        return rxjs__WEBPACK_IMPORTED_MODULE_3__["merge"].apply(void 0, dataMutations).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function () {
-            return _this.getPagedData(_this.getSortedData(_this.data.slice()));
-        }));
-    };
-    /**
-     *  Called when the table is being destroyed. Use this function, to clean up
-     * any open connections or free any held resources that were set up during connect.
-     */
-    TableDataSource.prototype.disconnect = function () { };
-    /**
-     * Paginate the data (client-side). If you're using server-side pagination,
-     * this would be replaced by requesting the appropriate data from the server.
-     */
-    TableDataSource.prototype.getPagedData = function (data) {
-        var startIndex = this.paginator.pageIndex * this.paginator.pageSize;
-        return data.splice(startIndex, this.paginator.pageSize);
-    };
-    /**
-     * Sort the data (client-side). If you're using server-side sorting,
-     * this would be replaced by requesting the appropriate data from the server.
-     */
-    TableDataSource.prototype.getSortedData = function (data) {
-        var _this = this;
-        if (!this.sort.active || this.sort.direction === '') {
-            return data;
-        }
-        return data.sort(function (a, b) {
-            var isAsc = _this.sort.direction === 'asc';
-            switch (_this.sort.active) {
-                case 'name': return compare(a.name, b.name, isAsc);
-                case 'id': return compare(+a.id, +b.id, isAsc);
-                default: return 0;
-            }
-        });
-    };
-    return TableDataSource;
-}(_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_1__["DataSource"]));
-
-/** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a, b, isAsc) {
-    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-}
-
-
-/***/ }),
-
-/***/ "./src/app/table/table.component.css":
-/*!*******************************************!*\
-  !*** ./src/app/table/table.component.css ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".full-width-table {\r\n  width: 100%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFibGUvdGFibGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7QUFDYiIsImZpbGUiOiJzcmMvYXBwL3RhYmxlL3RhYmxlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZnVsbC13aWR0aC10YWJsZSB7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuIl19 */"
-
-/***/ }),
-
-/***/ "./src/app/table/table.component.html":
-/*!********************************************!*\
-  !*** ./src/app/table/table.component.html ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"mat-elevation-z8\">\r\n  <table mat-table class=\"full-width-table\" [dataSource]=\"dataSource\" matSort aria-label=\"Elements\">\r\n    <!-- Id Column -->\r\n    <ng-container matColumnDef=\"id\">\r\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>\r\n      <td mat-cell *matCellDef=\"let row\">{{row.id}}</td>\r\n    </ng-container>\r\n\r\n    <!-- Name Column -->\r\n    <ng-container matColumnDef=\"name\">\r\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>\r\n      <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\r\n    </ng-container>\r\n\r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n  </table>\r\n\r\n  <mat-paginator #paginator\r\n      [length]=\"dataSource.data.length\"\r\n      [pageIndex]=\"0\"\r\n      [pageSize]=\"50\"\r\n      [pageSizeOptions]=\"[25, 50, 100, 250]\">\r\n  </mat-paginator>\r\n</div>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/table/table.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/table/table.component.ts ***!
-  \******************************************/
-/*! exports provided: TableComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableComponent", function() { return TableComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _table_datasource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./table-datasource */ "./src/app/table/table-datasource.ts");
-
-
-
-
-var TableComponent = /** @class */ (function () {
-    function TableComponent() {
-        /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-        this.displayedColumns = ['id', 'name'];
-    }
-    TableComponent.prototype.ngOnInit = function () {
-        this.dataSource = new _table_datasource__WEBPACK_IMPORTED_MODULE_3__["TableDataSource"](this.paginator, this.sort);
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"]),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"])
-    ], TableComponent.prototype, "paginator", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSort"]),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSort"])
-    ], TableComponent.prototype, "sort", void 0);
-    TableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-table',
-            template: __webpack_require__(/*! ./table.component.html */ "./src/app/table/table.component.html"),
-            styles: [__webpack_require__(/*! ./table.component.css */ "./src/app/table/table.component.css")]
-        })
-    ], TableComponent);
-    return TableComponent;
 }());
 
 
